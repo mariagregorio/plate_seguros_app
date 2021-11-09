@@ -1,0 +1,37 @@
+{% load static %}
+
+<div id="incapacidad">
+    <div class="wrapper">
+        <div class="text">
+            <div class="text-wrapper">
+                <img data-aos="fade-down"
+                     data-aos-duration="900"
+                     data-aos-offset="0"
+                     class="misc" src="{% static 'landing/assets/misc.png' %}" alt="">
+                <h1 data-aos="fade-down"
+                    data-aos-duration="900"
+                    data-aos-offset="0">{{incapacidad.titulo}}</h1>
+                {{incapacidad.contenido|safe}}
+                <a href="#contacto" class="btn btn-primary">Contáctenos</a>
+            </div>
+        </div>
+        <div class="image">
+            <div id="sliderIncapacidad">
+                {% for slide in incapacidad_slider %}
+                    <div><img src="{{slide.imagen.url}}" alt=""></div>
+                {% endfor %}
+            </div>
+            <div class="incapacidad-slider-nav"></div>
+            <div data-aos="zoom-out"
+                 data-aos-duration="1200"
+                 data-aos-easing="ease-out-cubic"
+                 data-aos-offset="0"
+                 class="square"><img src="{% static 'landing/assets/idi_square.png' %}" alt=""></div>
+            <div class="square-mobile"
+                 data-aos="zoom-out"
+                 data-aos-easing="ease-out-cubic"
+                 data-aos-duration="1200"
+                 data-aos-offset="0"><img src="{% static 'landing/assets/idi_square_mobile.png' %}" alt=""></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{% load static %}
+
+<div id="aseguradoras">
+    <div class="wrapper">
+        <div class="header">
+            <img data-aos="fade-down"
+                 data-aos-duration="900"
+                 data-aos-offset="0"
+                 class="misc" src="{% static 'landing/assets/misc.png' %}" alt="">
+            <h1 data-aos="fade-down"
+                data-aos-duration="900"
+                data-aos-offset="0">Aseguradoras</h1>
+        </div>
+        <div class="grid">
+            <ul class="list" id="aseguradorasSlider">
+                {% for a in aseguradoras %}
+                <li><img src="{{a.imagen.url}}" alt="{{a.nombre}}"></li>
+                {% endfor %}
+            </ul>
+            <div class="aseguradoras-slider-nav"></div>
+        </div>
+    </div>
+</div>

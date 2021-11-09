@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plate Seguros</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'landing/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'landing/css/aos.css' %}">
+    
+</head>
+<body>
+
+{% include 'landing/includes/menu.html' %}
+
+{% include 'landing/includes/home.html' %}
+
+{% include 'landing/includes/quienes_somos.html' %}
+
+{% include 'landing/includes/seguros.html' %}
+
+{% include 'landing/includes/incapacidad.html' %}
+
+{% include 'landing/includes/aseguradoras.html' %}
+
+{% include 'landing/includes/contacto.html' %}
+
+{% include 'landing/includes/footer.html' %}
+    
+</body>
+
+
+<script src="{% static 'landing/js/jquery-3.6.0.min.js' %}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{% static 'landing/js/aos.js' %}"></script>
+<script src="{% static 'landing/js/slick.min.js' %}"></script>
+<script src="{% static 'landing/js/main.js' %}"></script>
+
+</html>

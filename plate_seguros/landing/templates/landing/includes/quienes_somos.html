@@ -1,0 +1,36 @@
+{% load static %}
+
+<div id="quienesSomos">
+    <div class="wrapper">
+        <div class="image"
+             data-aos="fade-right"
+             data-aos-duration="900"
+             data-aos-offset="0">
+            <img class="stock-photo" src="{{quienes_somos.imagen.url}}" alt="Quienes somos">
+        </div>
+        <div class="text">
+            <img data-aos="zoom-out"
+                 data-aos-easing="ease-out-cubic"
+                 data-aos-duration="1200"
+                 data-aos-offset="0" class="square" src="{% static 'landing/assets/qs_mobile_square.png' %}" alt="">
+            <div class="text-wrapper">
+                <img data-aos="fade-down"
+                     data-aos-duration="900"
+                     data-aos-offset="0"
+                     class="misc" src="{% static 'landing/assets/misc.png' %}" alt="">
+                <h1 data-aos="fade-down"
+                    data-aos-duration="900"
+                    data-aos-offset="0">{{quienes_somos.titulo}}</h1>
+                {{quienes_somos.contenido|safe}}
+            </div>
+            <div data-aos="zoom-out"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1200"
+                data-aos-offset="0" class="border"><img src="{% static 'landing/assets/qs_border.png' %}" alt=""></div>
+            <div data-aos="zoom-out"
+                 data-aos-easing="ease-out-cubic"
+                 data-aos-duration="1200"
+                 data-aos-offset="0" class="mobile-border"><img src="{% static 'landing/assets/qs_mobile_border.png' %}" alt=""></div>
+        </div>
+    </div>
+</div>

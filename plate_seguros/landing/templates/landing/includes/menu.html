@@ -1,0 +1,93 @@
+{% load static %}
+
+<div id="mobileMenu">
+    <div class="burger" id="mobileMenuBurger">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="2" y1="4" x2="22" y2="4" stroke="#00A79B" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+            <line x1="2" y1="12" x2="22" y2="12" stroke="#00A79B" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+            <line x1="2" y1="20" x2="22" y2="20" stroke="#00A79B" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+        </svg>
+    </div>
+</div>
+
+<div id="mobileMenuOpen">
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'landing/assets/home_logo.png' %}" alt="Plate Seguros">
+        </div>
+        <div class="close" id="mobileMenuCloseButton">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 5L5 19" stroke="#00A79B" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+                <path d="M19 19L5 5" stroke="#00A79B" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"/>
+            </svg>
+        </div>
+    </div>
+    <ul class="list">
+        <li><a href="#home" id="mobileMenuItem_home">Home</a></li>
+        <li><a href="#quienesSomos" id="mobileMenuItem_quienesSomos">Quienes somos</a></li>
+        <li><a href="#seguros" id="mobileMenuItem_seguros">Seguros</a></li>
+        <li><a href="#incapacidad" id="mobileMenuItem_incapacidad">Incapacidad de ingresos</a></li>
+    </ul>
+    <div class="button">
+        <a href="#contacto" class="btn btn-primary">Contáctenos</a>
+    </div>
+</div>
+
+<div id="menu">
+    <ul>
+        <li class="arrow arrow-up">
+            <a id="menuArrowUp">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 7L6.90674 1.85714L1 7" stroke="#EBEDF2" stroke-width="2"/>
+                </svg>
+            </a>
+        </li>
+        <li><a href="#home" id="menuItem_home">
+            <span class="label">Home</span>
+            <div class="circle-wrapper">
+                <svg class="circle" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="6" cy="6" r="5" stroke="#EBEDF2" stroke-width="2"/>
+                </svg>
+            </div>
+        </a></li>
+        <li><a href="#quienesSomos" id="menuItem_quienesSomos">
+            <span class="label">Quiénes somos</span>
+            <div class="circle-wrapper">
+                <svg class="circle" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="6" cy="6" r="5" stroke="#EBEDF2" stroke-width="2"/>
+                </svg>
+            </div>
+        </a></li>
+        <li><a href="#seguros" id="menuItem_seguros">
+            <span class="label">Seguros</span>
+            <div class="circle-wrapper">
+                <svg class="circle" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="6" cy="6" r="5" stroke="#EBEDF2" stroke-width="2"/>
+                </svg>
+            </div>
+        </a></li>
+        <li><a href="#incapacidad" id="menuItem_incapacidad">
+            <span class="label">Incapacidad de ingresos</span>
+            <div class="circle-wrapper">
+                <svg class="circle" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="6" cy="6" r="5" stroke="#EBEDF2" stroke-width="2"/>
+                </svg>
+            </div>
+        </a></li>
+        <li><a href="#contacto" id="menuItem_contacto">
+            <span class="label">Contacto</span>
+            <div class="circle-wrapper">
+                <svg class="circle" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="6" cy="6" r="5" stroke="#EBEDF2" stroke-width="2"/>
+                </svg>
+            </div>
+        </a></li>
+        <li class="arrow arrow-down">
+            <a id="menuArrowDown">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L7.09326 6.14286L13 1" stroke="#EBEDF2" stroke-width="2"/>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,47 @@
+{% load static %}
+
+<div id="footer">
+    <div class="datos">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <p class="bold">Nº de matrícula en SSN</p>
+                        <p>770</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <p class="bold">Atención al asegurado</p>
+                        <p>0800-666-8400</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <p class="argentina"><a href="http://www.argentina.gob.ar/ssn" target="_blank">www.argentina.gob.ar/ssn</a></p>
+                </div>
+                <div class="col">
+                    <img src="{% static 'landing/assets/logo_ssn.png' %}" class="img-fluid" alt="Superintendencia de Seguros de la Nación">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col">
+                    <img src="{% static 'landing/assets/footer_logo.png' %}" alt="Plate Asesores de Seguros">
+                </div>
+                <div class="col">
+                    <p>Copyright © 2021. Derechos Reservados.</p>
+                </div>
+                <div class="col">
+                    <ul class="social-media">
+                        <li><a href="{{contacto.instagram}}"><img src="{% static 'landing/assets/icon_ig_sm.png' %}" alt="Instagram"></a></li>
+                        <li><a href="{{contacto.facebook}}"><img src="{% static 'landing/assets/icon_fb_sm.png' %}" alt="Facebook"></a></li>
+                        <li><a href="{{contacto.linkedin}}"><img src="{% static 'landing/assets/icon_linkedin_sm.png' %}" alt="Linkedin"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
