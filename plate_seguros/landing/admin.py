@@ -5,8 +5,8 @@ from .models import QuienesSomos, SegurosEncabezado, Seguro, Home, Incapacidad, 
 class QuienesSomosAdmin(admin.ModelAdmin):
     list_display = ('titulo',)
 
-    def has_add_permission(self, request, obj=None):
-        return False
+    # def has_add_permission(self, request, obj=None):
+    #     return False
 
     def has_delete_permission(self, request, obj=None):
         return False
@@ -18,8 +18,8 @@ admin.site.register(QuienesSomos, QuienesSomosAdmin)
 class SegurosEncabezadoAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'subtitulo',)
 
-    def has_add_permission(self, request, obj=None):
-        return False
+    # def has_add_permission(self, request, obj=None):
+    #     return False
 
     def has_delete_permission(self, request, obj=None):
         return False
@@ -39,8 +39,8 @@ admin.site.register(Seguro, SeguroAdmin)
 class HomeAdmin(admin.ModelAdmin):
     list_display = ('titulo',)
 
-    def has_add_permission(self, request, obj=None):
-        return False
+    # def has_add_permission(self, request, obj=None):
+    #     return False
 
     def has_delete_permission(self, request, obj=None):
         return False
@@ -52,8 +52,8 @@ admin.site.register(Home, HomeAdmin)
 class IncapacidadAdmin(admin.ModelAdmin):
     list_display = ('titulo',)
 
-    def has_add_permission(self, request, obj=None):
-        return False
+    # def has_add_permission(self, request, obj=None):
+    #     return False
 
     def has_delete_permission(self, request, obj=None):
         return False
@@ -80,8 +80,8 @@ admin.site.register(Aseguradora, AseguradoraAdmin)
 class ContactoAdmin(admin.ModelAdmin):
     list_display = ('titulo',)
 
-    def has_add_permission(self, request, obj=None):
-        return False
+    # def has_add_permission(self, request, obj=None):
+    #     return False
 
     def has_delete_permission(self, request, obj=None):
         return False
