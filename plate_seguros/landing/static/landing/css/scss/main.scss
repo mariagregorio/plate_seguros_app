@@ -375,11 +375,11 @@ a {
         background: $grey;
         .image {
             width: 50%;
-            background: url(../assets/qs_image.png) no-repeat center center;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
+            // background: url(../assets/qs_image.png) no-repeat center center;
+            // -webkit-background-size: cover;
+            // -moz-background-size: cover;
+            // -o-background-size: cover;
+            // background-size: cover;
             .stock-photo {
                 display: none;
             }

@@ -411,8 +411,6 @@ a {
 
 #quienesSomos .wrapper .image {
   width: 50%;
-  background: url(../assets/qs_image.png) no-repeat center center;
-  background-size: cover;
 }
 
 #quienesSomos .wrapper .image .stock-photo {
