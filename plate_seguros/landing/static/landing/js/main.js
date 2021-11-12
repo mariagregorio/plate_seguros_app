@@ -318,3 +318,14 @@ if (mobileMenuItems) {
   });
 }
 
+
+const formContacto = document.getElementById('formContacto')
+const contactoFormSubmitBtn = document.getElementById('contactoFormSubmitBtn')
+const contactoFormEnviando = document.getElementById('contactoFormEnviando')
+
+if (formContacto && contactoFormSubmitBtn) {
+  formContacto.onsubmit = function() {
+    contactoFormSubmitBtn.disabled = true;
+    contactoFormEnviando.classList.add('activo')
+  }
+}

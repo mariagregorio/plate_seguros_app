@@ -326,7 +326,7 @@ a {
 }
 
 #home {
-  background: url(../assets/home_hero.png) no-repeat center center;
+  background: url(../../assets/home_hero.png) no-repeat center center;
   background-size: cover;
   overflow: hidden;
 }
@@ -787,11 +787,38 @@ a {
   width: 65%;
 }
 
-#contacto .wrapper .row .col2 form .form-group {
+#contacto .wrapper .row .col2 .overlay {
+  display: none;
+}
+
+#contacto .wrapper .row .col2 .overlay.active {
+  display: block;
+  height: 100%;
+  z-index: 2;
+}
+
+#contacto .wrapper .row .col2 .alert {
+  color: #A8B1D9;
+  font-size: 18px;
+}
+
+#contacto .wrapper .row .col2 form .form-contacto {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#contacto .wrapper .row .col2 form .form-contacto li {
+  margin: 0;
+  padding: 0;
   margin-bottom: 16px;
 }
 
-#contacto .wrapper .row .col2 form .form-group input[type=text], #contacto .wrapper .row .col2 form .form-group textarea {
+#contacto .wrapper .row .col2 form .form-contacto li label {
+  display: none;
+}
+
+#contacto .wrapper .row .col2 form .form-contacto li input, #contacto .wrapper .row .col2 form .form-contacto li textarea {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'DM Sans', sans-serif;
@@ -802,12 +829,29 @@ a {
   color: #3A445D;
 }
 
-#contacto .wrapper .row .col2 form .form-group textarea {
+#contacto .wrapper .row .col2 form .form-contacto li textarea {
   height: 126px;
+}
+
+#contacto .wrapper .row .col2 form .form-contacto li .errorlist {
+  color: #f8d7da;
 }
 
 #contacto .wrapper .row .col2 form button {
   cursor: pointer;
+}
+
+#contacto .wrapper .row .col2 form button:disabled {
+  opacity: .5;
+}
+
+#contacto .wrapper .row .col2 form .enviando {
+  display: none;
+  color: #A8B1D9;
+}
+
+#contacto .wrapper .row .col2 form .enviando.activo {
+  display: block;
 }
 
 #footer .datos {
@@ -1128,7 +1172,7 @@ a {
     display: block;
   }
   #home {
-    background: url(../assets/home_hero.png) no-repeat 20% center;
+    background: url(../../assets/home_hero.png) no-repeat 20% center;
     background-size: cover;
   }
   #home .logo {

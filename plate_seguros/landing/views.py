@@ -1,6 +1,13 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.db.models import F
+from django.core.mail import send_mail
 from .models import QuienesSomos, SegurosEncabezado, Seguro, Home, Incapacidad, IncapacidadSlide, Aseguradora, Contacto
+from .forms import ContactForm
+
+
+def send_email_form():
+    pass
 
 
 def index(request): 
@@ -12,6 +19,7 @@ def index(request):
     incapacidad_slider = IncapacidadSlide.objects.order_by(F('posicion').asc(nulls_last=True))
     aseguradoras = Aseguradora.objects.order_by(F('posicion').asc(nulls_last=True))
     contacto = Contacto.objects.get(pk=1)
+    contacto_alert = ''
 
     # agrupar de a dos para preparar para el slider en mobile
     seguros_list = []
@@ -23,6 +31,34 @@ def index(request):
             except:
                 seguros_list.append([seguros[i]])
 
+    if request.method == 'POST':
+        contacto_form = ContactForm(request.POST)
+
+        if contacto_form.is_valid():
+            data = {
+                'nombre': contacto_form.cleaned_data['nombre'],
+                'email': contacto_form.cleaned_data['email'],
+                'mensaje': contacto_form.cleaned_data['mensaje']
+            }
+            print(data)
+
+            mensaje = '''
+                Nombre: {}
+                Email: {}
+                Mensaje: {}
+            '''.format(data['nombre'], data['email'], data['mensaje'])
+
+            try:
+                send_mail('Contacto de Plateseguros.com', mensaje, 'airam.greg@gmail.com', ['airam.greg@gmail.com'])
+                contacto_alert = 'Mensaje enviado. Muchas gracias!'
+            except:
+                contacto_alert = 'Lo lamentamos, su mensaje no pudo ser enviado.'
+            
+            contacto_form = ContactForm()
+
+    else:
+        contacto_form = ContactForm()
+
     return render(request, 'landing/index.html', {
         'home': home,
         'quienes_somos': quienes_somos,
@@ -31,5 +67,7 @@ def index(request):
         'incapacidad': incapacidad,
         'incapacidad_slider': incapacidad_slider,
         'aseguradoras': aseguradoras,
-        'contacto': contacto
+        'contacto': contacto,
+        'contacto_form': contacto_form,
+        'contacto_alert': contacto_alert
     })

@@ -26,9 +26,10 @@ SECRET_KEY = getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv('IS_DEVELOPMENT', True)
 
-ALLOWED_HOSTS = [
-    getenv('ALLOWED_HOST')
-]
+if getenv('IS_DEVELOPMENT'):
+    ALLOWED_HOSTS = [getenv('ALLOWED_HOST_DEV')]
+else:
+    ALLOWED_HOSTS = [getenv('ALLOWED_HOST_PROD')]
 
 
 # Application definition
@@ -77,17 +78,24 @@ WSGI_APPLICATION = 'plate_seguros.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'plateseguros',
-        'USER': getenv('DB_USER'),
-        'PASSWORD': getenv('DB_PASSWORD'),
-        'HOST': 'localhost',
-        'PORT': '5432',
+if getenv('IS_DEVELOPMENT'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': getenv('DB_NAME'),
+            'USER': getenv('DB_USER'),
+            'PASSWORD': getenv('DB_PASSWORD'),
+            'HOST': getenv('DB_HOST'),
+            'PORT': getenv('DB_PORT'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -137,3 +145,11 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = getenv('EMAIL_HOST')
+EMAIL_HOST_USER = getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = getenv('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = getenv('EMAIL_PORT')
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

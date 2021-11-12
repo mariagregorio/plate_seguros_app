@@ -20,19 +20,17 @@
                 </div>
             </div>
             <div class="col2">
+                {% if contacto_alert != '' %}
+                <p class="alert">{{contacto_alert}}</p>
+                {% endif %}
                 <form id="formContacto"
-                      action="https://formspree.io/f/xgerbwwd"
-                      method="POST">
-                    <div class="form-group">
-                        <input type="text" id="contactoNombre" name="nombre" placeholder="Tu nombre">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="contactoEmail" name="email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="mensaje" id="contactoMensaje" placeholder="Mensaje"></textarea>
-                    </div>
-                    <button class="btn btn-primary" type="submit">Enviar</button>
+                    method="POST">
+                    {% csrf_token %}
+                    <ul class="form-contacto">
+                    {{contacto_form.as_ul}}
+                    </ul>
+                    <button class="btn btn-primary" id="contactoFormSubmitBtn" type="submit">Enviar</button>
+                    <p id="contactoFormEnviando" class="enviando">Enviando...</p>
                 </form>
             </div>
         </div>
