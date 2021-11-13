@@ -26,7 +26,7 @@ SECRET_KEY = getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv('IS_DEVELOPMENT', True)
 
-if getenv('IS_DEVELOPMENT'):
+if getenv('IS_DEVELOPMENT') == 'False':
     ALLOWED_HOSTS = [getenv('ALLOWED_HOST_DEV')]
 else:
     ALLOWED_HOSTS = [getenv('ALLOWED_HOST_PROD')]
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'plate_seguros.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if getenv('IS_DEVELOPMENT'):
+if getenv('IS_DEVELOPMENT') == 'False':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
