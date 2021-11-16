@@ -42,4 +42,12 @@
 <script src="{% static 'landing/js/slick.min.js' %}"></script>
 <script src="{% static 'landing/js/main.js' %}"></script>
 
+{% if is_contacto_post %}
+<script>
+    $(document).ready(function(){
+        window.location = '#contacto'
+    });
+</script>
+{% endif %}
+
 </html>

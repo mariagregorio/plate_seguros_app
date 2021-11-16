@@ -31,7 +31,10 @@ def index(request):
             except:
                 seguros_list.append([seguros[i]])
 
+    is_contacto_post = False
+
     if request.method == 'POST':
+        is_contacto_post = True
         contacto_form = ContactForm(request.POST)
 
         if contacto_form.is_valid():
@@ -40,7 +43,6 @@ def index(request):
                 'email': contacto_form.cleaned_data['email'],
                 'mensaje': contacto_form.cleaned_data['mensaje']
             }
-            print(data)
 
             mensaje = '''
                 Nombre: {}
@@ -49,7 +51,7 @@ def index(request):
             '''.format(data['nombre'], data['email'], data['mensaje'])
 
             try:
-                send_mail('Contacto de Plateseguros.com', mensaje, 'airam.greg@gmail.com', ['airam.greg@gmail.com'])
+                send_mail('Contacto de Plateseguros.com', mensaje, 'contacto@plateseguros.com', ['contacto@plateseguros.com'])
                 contacto_alert = 'Mensaje enviado. Muchas gracias!'
             except:
                 contacto_alert = 'Lo lamentamos, su mensaje no pudo ser enviado.'
@@ -58,6 +60,7 @@ def index(request):
 
     else:
         contacto_form = ContactForm()
+
 
     return render(request, 'landing/index.html', {
         'home': home,
@@ -69,5 +72,6 @@ def index(request):
         'aseguradoras': aseguradoras,
         'contacto': contacto,
         'contacto_form': contacto_form,
-        'contacto_alert': contacto_alert
+        'contacto_alert': contacto_alert,
+        'is_contacto_post': is_contacto_post
     })
