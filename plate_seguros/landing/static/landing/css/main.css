@@ -337,7 +337,7 @@ a {
 }
 
 #home {
-  background: url(../../assets/home_hero.png) no-repeat center center;
+  background: url(../assets/home_hero.png) no-repeat center center;
   background-size: cover;
   overflow: hidden;
 }
@@ -1209,7 +1209,7 @@ a {
     display: block;
   }
   #home {
-    background: url(../../assets/home_hero.png) no-repeat 20% center;
+    background: url(../assets/home_hero.png) no-repeat 20% center;
     background-size: cover;
   }
   #home .logo {
