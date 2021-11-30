@@ -20,6 +20,7 @@ def index(request):
     aseguradoras = Aseguradora.objects.order_by(F('posicion').asc(nulls_last=True))
     contacto = Contacto.objects.get(pk=1)
     contacto_alert = ''
+    contacto_whatsapp = contacto.telefono3.replace(' ', '').replace('+', '')
 
     # agrupar de a dos para preparar para el slider en mobile
     seguros_list = []
@@ -73,5 +74,6 @@ def index(request):
         'contacto': contacto,
         'contacto_form': contacto_form,
         'contacto_alert': contacto_alert,
-        'is_contacto_post': is_contacto_post
+        'is_contacto_post': is_contacto_post,
+        'contacto_whatsapp': contacto_whatsapp
     })
