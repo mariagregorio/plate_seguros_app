@@ -795,7 +795,29 @@ a {
 }
 
 #contacto .wrapper .row .col1 .datos .btn-whatsapp {
-  margin-top: 70px;
+  margin-top: 54px;
+  line-height: 24px;
+  cursor: pointer;
+  padding: 15px 24px;
+}
+
+#contacto .wrapper .row .col1 .datos .btn-whatsapp span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#contacto .wrapper .row .col1 .datos .btn-whatsapp svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#contacto .wrapper .row .col1 .datos .btn-whatsapp svg path {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+#contacto .wrapper .row .col1 .datos .btn-whatsapp:hover svg path {
+  fill: #A8B1D9;
 }
 
 #contacto .wrapper .row .col2 {
